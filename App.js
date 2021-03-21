@@ -1,6 +1,6 @@
 import React from 'react';
-import {Home} from './src/views';
+import MainNavigation from './src/navigation/Navigation';
 
-const App = () => <Home />;
+const App = () => <MainNavigation />;
 
 export default App;
