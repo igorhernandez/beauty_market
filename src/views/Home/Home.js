@@ -1,38 +1,34 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  SafeAreaView,
-  Image,
-  FlatList,
-  ActivityIndicator,
-} from 'react-native';
-import Banner from '../../components/atoms/Banner/Banner';
+import {View, SafeAreaView, FlatList, ActivityIndicator} from 'react-native';
+import {apiUrl} from '../../api/apiConfig';
+import {Header, Banner} from '../../components/atoms';
 import {styles} from './Home.style';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
-  const [itemsLength, setItemsLength] = useState(0);
+  const [isLastPage, setIsLastPage] = useState(false);
   const [loading, setLoading] = useState(false);
   const limitPerPage = 8;
 
-  const logo =
-    'https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:eco/v1/blz/assets-store/0.0.285/images/store/1/logo_2x.png';
-
   const getProducts = () => {
-    console.log('entrei');
-    if (itemsLength !== products.length || products.length === 0) {
-      setLoading(true);
-      const baseUrl = 'http://localhost:3000';
-      const url = `${baseUrl}/products?page=${page}&limit=${limitPerPage}`;
-      fetch(url)
-        .then(res => res.json())
-        .then(res => {
-          setItemsLength(res.productsLength);
-          setLoading(false);
-          setProducts(prevProducts => [...prevProducts, ...res.products]);
-        });
+    if (isLastPage) {
+      return null;
     }
+    setLoading(true);
+    const url = `${apiUrl}/products?page=${page}&limit=${limitPerPage}`;
+    fetch(url)
+      .then(res => res.json())
+      .then(response => {
+        const {lastPage, products: newProducts} = response;
+        console.log({response});
+        setLoading(false);
+        setIsLastPage(lastPage);
+        setProducts(prevProducts => [...prevProducts, ...newProducts]);
+      })
+      .catch(error => {
+        setLoading(false);
+      });
   };
 
   const shouldRenderLoader = () =>
@@ -50,16 +46,14 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.containerLogo}>
-        <Image resizeMode="contain" source={{uri: logo}} style={styles.logo} />
-      </View>
+      <Header />
       <FlatList
         keyExtractor={item => item.id}
+        onEndReached={() => setPage(prevPage => prevPage + 1)}
+        onEndReachedThreshold={0}
         data={products}
-        renderItem={Banner}
-        onEndReached={() => setPage(prevState => prevState + 1)}
-        onEndReachedThreshold={0.01}
         ListFooterComponent={shouldRenderLoader}
+        renderItem={Banner}
       />
     </SafeAreaView>
   );

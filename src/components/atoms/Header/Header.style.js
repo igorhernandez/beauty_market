@@ -1,12 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  containerBanner: {
-    padding: 10,
+  containerLogo: {
+    paddingVertical: 20,
   },
-  banner: {
-    backgroundColor: '#efefef',
-    height: 100,
+  logo: {
+    height: 40,
     width: '100%',
   },
 });
