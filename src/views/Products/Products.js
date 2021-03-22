@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, Text, View} from 'react-native';
-import {Banner, Product} from '../../components/atoms';
+import {Banner} from '../../components/atoms';
+import {Product} from '../../components/particles';
 import {productsMocks} from './Products.mock';
 import {styles} from './Products.style';
 
@@ -10,8 +11,8 @@ const Products = ({route}) => {
   } = route;
 
   const renderProducts = () =>
-    productsMocks.map((product, index) => (
-      <Product key={index} product={product} />
+    productsMocks.map(product => (
+      <Product key={product.id} product={product} />
     ));
 
   return (
