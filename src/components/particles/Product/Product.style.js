@@ -45,40 +45,4 @@ export const styles = StyleSheet.create({
     color: colors.neutralColorPurple,
     fontWeight: 'bold',
   },
-  productContent: {
-    marginTop: 8,
-  },
-  productLineText: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  productPrices: {
-    marginTop: 12,
-  },
-  oldPrice: {
-    textDecorationLine: 'line-through',
-  },
-  newPrice: {
-    fontSize: 18,
-  },
-  strongOrange: {
-    fontWeight: 'bold',
-    color: colors.neutralColorOrange,
-  },
-  transportText: {
-    fontSize: 14,
-  },
-  showMoreButton: {
-    backgroundColor: colors.neutralColorOrange,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
-    marginVertical: 10,
-  },
-  showMoreButtonText: {
-    color: colors.neutralColorWhite,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
 });

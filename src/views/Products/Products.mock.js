@@ -1,5 +1,6 @@
 export const productsMocks = [
   {
+    id: 1,
     img:
       'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/dpr_2.0/v1/imagens/product/87240/f02156d0-cb80-4a2c-abd1-33503ecf9b58-kit-kerastase-chronologiste-regenerant-3-produtos.png',
     line: 'Kérastase',
@@ -12,6 +13,7 @@ export const productsMocks = [
     discount: '-13%',
   },
   {
+    id: 2,
     img:
       'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/84365/88602085-3619-49f9-8367-fe058016fb98-kit-kerastase-nutritive-magistral-box-2-produtos.png',
     line: 'Kérastase',
@@ -24,6 +26,7 @@ export const productsMocks = [
     discount: '-23%',
   },
   {
+    id: 3,
     img:
       'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/5/pai-46889-46892-46891-46890-46893-48147-4532354328471582316.png',
     line: 'Kérastase',
@@ -36,6 +39,7 @@ export const productsMocks = [
     discount: '-15%',
   },
   {
+    id: 4,
     img:
       'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/83678/e66a2e90-9325-4131-8285-f4b1eaa3ab6b-83678-pai-67180-67182-67183-83033.png',
     line: 'Kérastase',
