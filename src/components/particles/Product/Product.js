@@ -1,5 +1,7 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
+import {Button} from '../../atoms';
+import {ProductContent, ProductPrices} from '../../molecules';
 import {styles} from './Product.style';
 
 const Product = ({product}) => {
@@ -22,6 +24,16 @@ const Product = ({product}) => {
     ) : (
       <></>
     );
+  const productContentProps = {
+    line,
+    productName,
+  };
+  const productPricesProps = {
+    oldPrice,
+    newPrice,
+    transport,
+    plots,
+  };
   return (
     <>
       <View style={styles.productBox}>
@@ -38,23 +50,9 @@ const Product = ({product}) => {
           />
         </View>
         {shouldRenderNewProductAlert()}
-        <View style={styles.productContent}>
-          <Text style={styles.productLineText}>{line}</Text>
-          <Text>{productName}</Text>
-        </View>
-        <View style={styles.productPrices}>
-          <Text style={styles.oldPrice}>{oldPrice}</Text>
-          <Text style={[styles.newPrice, styles.strongOrange]}>{newPrice}</Text>
-          <Text style={[styles.strongOrange, styles.transportText]}>
-            {transport}
-          </Text>
-          <Text>{plots}</Text>
-          <TouchableOpacity>
-            <View style={styles.showMoreButton}>
-              <Text style={styles.showMoreButtonText}>Ver mais</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+        <ProductContent {...productContentProps} />
+        <ProductPrices {...productPricesProps} />
+        <Button text="Ver Mais" />
       </View>
     </>
   );
