@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, SafeAreaView, FlatList, ActivityIndicator} from 'react-native';
 import {apiUrl} from '../../api/apiConfig';
-import {Header, Banner} from '../../components/atoms';
+import {Header, Banner} from '@components';
 import {styles} from './Home.style';
 
 const Home = () => {

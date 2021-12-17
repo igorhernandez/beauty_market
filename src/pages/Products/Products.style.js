@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../styles/colors';
+import colors from '@styles/colors';
 
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.neutralColorWhite,
     paddingHorizontal: 10,
+    flex: 1,
   },
   sectionTitle: {
     fontSize: 20,
@@ -13,7 +14,7 @@ export const styles = StyleSheet.create({
   },
   productsContainer: {
     flexWrap: 'wrap',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
   },
 });

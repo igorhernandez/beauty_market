@@ -1,4 +1,4 @@
-import {Home, Products} from '../views/';
+import {Home, Products} from '../pages/';
 import {RouteNames} from './RouteNames';
 
 const screens = {

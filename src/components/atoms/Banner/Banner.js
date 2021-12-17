@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
-import {Navigate} from '../../../navigation/RootNavigation';
-import {RouteNames} from '../../../navigation/RouteNames';
+import {Navigate} from '@navigation/RootNavigation';
+import {RouteNames} from '@navigation/RouteNames';
 import {styles} from './Banner.style';
 
 const Banner = ({item}) => {
